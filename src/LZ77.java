@@ -36,7 +36,7 @@ public class LZ77 {
 
 	private static void writeOnFile(ArrayList<Byte> data, String file) {
 		FileOperations fio = new FileOperations(file);
-		fio.write(data);
+		fio.writeBits(data);
 	}
 
 	public static void decompress() {
@@ -60,7 +60,7 @@ public class LZ77 {
 
 	private static byte[] readFromFile(String file) {
 		FileOperations fio = new FileOperations(file);
-		return fio.read();
+		return fio.readBits();
 	}
 
 }

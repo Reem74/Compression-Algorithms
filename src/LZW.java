@@ -4,7 +4,7 @@ import java.util.Hashtable;
 public class LZW {
 
 	public static void compress(String file) {
-		byte[] input = new FileOperations(file).read();
+		byte[] input = new FileOperations(file).readBits();
 		Hashtable<String, Integer> prefixs = new Hashtable<>();
 		int lastPreNum = 0;
 		for (char i = 0; i <= 256; i++) {
@@ -29,7 +29,7 @@ public class LZW {
 
 	private static void writeOnFile(ArrayList<Integer> data, String file) {
 		FileOperations fio = new FileOperations(file);
-		fio.writeAsInt(data);
+		fio.writeInt(data);
 	}
 
 	public static void decompress() {
@@ -65,7 +65,7 @@ public class LZW {
 
 	private static ArrayList<Integer> readFromFile(String file) {
 		FileOperations fio = new FileOperations(file);
-		return fio.readAsInt();
+		return fio.readInt();
 	}
 
 }

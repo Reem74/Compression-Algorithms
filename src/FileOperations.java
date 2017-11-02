@@ -16,7 +16,7 @@ public class FileOperations {
 		path = filePath;
 	}
 
-	public void write(ArrayList<Byte> input) {
+	public void writeBits(ArrayList<Byte> input) {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(path));
 			for (int i = 0; i < input.size(); i++)
@@ -27,7 +27,7 @@ public class FileOperations {
 		}
 	}
 
-	public byte[] read() {
+	public byte[] readBits() {
 		byte[] getBytes = {};
 		try {
 			File file = new File(path);
@@ -43,7 +43,7 @@ public class FileOperations {
 		return getBytes;
 	}
 
-	public void writeAsInt(ArrayList<Integer> input) {
+	public void writeInt(ArrayList<Integer> input) {
 		try {
 			BufferedWriter writer = new BufferedWriter(new FileWriter(path));
 			for (int i = 0; i < input.size(); i++) {
@@ -55,7 +55,7 @@ public class FileOperations {
 		}
 	}
 
-	public static ArrayList<Integer> readAsInt() {
+	public static ArrayList<Integer> readInt() {
 		ArrayList<Integer> getBytes;
 		try {
 			File file = new File(path);

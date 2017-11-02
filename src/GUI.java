@@ -4,7 +4,6 @@ import javax.swing.JFrame;
 import javax.swing.JComboBox;
 import javax.swing.JFileChooser;
 import javax.swing.JTextField;
-import javax.swing.plaf.ButtonUI;
 import javax.print.attribute.standard.Compression;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -48,7 +47,7 @@ public class GUI {
 		frame.setBounds(100, 100, 568, 365);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
-		String[] algorithms = { "select algorithm", "LZ77", "LZW" };
+		String[] algorithms = { "select algorithm", "LZ77", "LZW" ,"Hauffman"};
 		JComboBox<String> comboBox_Algor = new JComboBox(algorithms);
 		comboBox_Algor.addActionListener(new ActionListener() {
 
@@ -87,6 +86,8 @@ public class GUI {
 					LZ77.compress(textField_Path.getText());
 				} else if (algo.equals("LZW")) {
 					LZW.compress(textField_Path.getText());
+				} else if (algo.equals("Hauffman")) {
+					Huffman.compress(textField_Path.getText());
 				}
 			}
 		});
@@ -100,6 +101,8 @@ public class GUI {
 					LZ77.decompress();
 				} else if (algo.equals("LZW")) {
 					LZW.decompress();
+				} else if (algo.equals("Hauffman")) {
+					Huffman.decompress();
 				}
 			}
 		});
